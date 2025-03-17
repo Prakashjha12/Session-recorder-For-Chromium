@@ -28,3 +28,4 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   }
   return true; // Keep async response active
 });
+chrome.action.setIcon({ path: "icons/icon48.png" });
