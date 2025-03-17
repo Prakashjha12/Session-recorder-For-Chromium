@@ -1,7 +1,7 @@
-# Chrome Extension - Session timer
+# Chrome Extension - Session Timer
 
 ## 📌 Overview
-This is a **Chrome Extension** that [briefly describe what your extension does]. It includes a timer feature that starts when activated, logs session times, and displays a floating session tracker.
+This is a **Chrome Extension** that tracks session time when activated, allows users to view recent sessions, and includes a floating session timer visible across all tabs.. It includes a timer feature that starts when activated, logs session times, and displays a floating session tracker.
 
 ## 🔥 Features
 - ⏳ Start and stop a session timer.
@@ -35,6 +35,16 @@ This is a **Chrome Extension** that [briefly describe what your extension does].
 - This extension is built using **HTML, CSS, JavaScript**.
 - Contributions are welcome! Feel free to fork this repository and submit a pull request.
 
+## 📜 Manifest Permissions
+```json
+{
+  "manifest_version": 3,
+  "name": "Session Timer",
+  "version": "1.0",
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": ["<all_urls>"]
+}
+```
 
 ## 📌 Known Issues & Fixes
 - **Chrome warning: 'This extension may be unsafe'** → Solution: Load as an **unpacked extension** or **publish on the Chrome Web Store**.
