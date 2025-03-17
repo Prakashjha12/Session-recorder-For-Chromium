@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session Timer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="standalone.css">
+</head>
+<body>
+  <div class="app-header">
+    <h1 class="app-title">Session Timer</h1>
+  </div>
+  
+  <div class="clock-container">
+    <div class="timer-circle">
+      <div class="timer-progress" id="timer-progress"></div>
+      <div class="timer-inner">
+        <div id="timer-value" class="timer-value">0:00</div>
+        <div class="timer-label">Session Timer</div>
+      </div>
+    </div>
+    
+    <div class="controls">
+      <button id="toggle-timer">
+        <i class="fas fa-play" id="play-icon"></i>
+      </button>
+    </div>
+  </div>
+
+  <script src="standalone.js"></script>
+  <script src="progress.js"></script>
+</body>
+</html> 

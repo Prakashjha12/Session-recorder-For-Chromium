@@ -5,17 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Session Timer</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <meta name="theme-color" content="#4361ee">
   </head>
   <body>
-    <h3>⏳ Session Timer</h3>
-    <button id="toggle-timer">Start Timer</button>
-    <p id="status"></p>
+    <div class="app-container">
+      <h3><i class="fas fa-stopwatch pulse"></i> Session Timer</h3>
+      
+      <button id="toggle-timer" aria-label="Start or stop timer">
+        <i class="fas fa-play"></i> Start Timer
+      </button>
+      
+      <div id="status" aria-live="polite"></div>
 
-    <h3>📜 Session History</h3>
-    <ul id="session-list"></ul>
+      <h3><i class="fas fa-history"></i> Session History</h3>
+      <div class="session-container">
+        <ul id="session-list" aria-label="Session history list"></ul>
+      </div>
 
-    <button id="clear-sessions">🗑 Clear Sessions</button>
-    <!-- New Button -->
+      <button id="clear-sessions" aria-label="Clear all sessions">
+        <i class="fas fa-trash-alt"></i> Clear Sessions
+      </button>
+    </div>
 
     <script src="popup.js"></script>
   </body>

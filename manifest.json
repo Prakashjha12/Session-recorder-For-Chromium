@@ -3,15 +3,38 @@
     "name": "Session Timer",
     "version": "1.0",
     "action": {
-      "default_popup": "popup.html"
+      "default_popup": "popup.html",
+      "default_icon": "icons/icon48.png"
     },
     "background": {
       "service_worker": "background.js"
     },
-    "permissions": ["storage"],
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"],
+        "run_at": "document_idle",
+        "all_frames": false
+      }
+    ],
+    "permissions": [
+      "storage", 
+      "tabs", 
+      "notifications", 
+      "alarms",
+      "windows"
+    ],
+    "host_permissions": ["<all_urls>"],
     "icons": {
-      "16": "icons/icon16.png",
-      "48": "icons/icon48.png",
-      "128": "icons/icon128.png"
-    }
+      "48": "icons/icon48.png"
+    },
+    "content_security_policy": {
+      "extension_pages": "script-src 'self'; object-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src https://fonts.gstatic.com https://cdnjs.cloudflare.com;"
+    },
+    "web_accessible_resources": [
+      {
+        "resources": ["standalone.html", "standalone.js", "progress.js", "standalone.css"],
+        "matches": ["<all_urls>"]
+      }
+    ]
   }
