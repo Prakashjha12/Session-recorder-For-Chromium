@@ -1,4 +1,4 @@
-# Chrome Extension - [Session timer]
+# Chrome Extension - Session timer
 
 ## 📌 Overview
 This is a **Chrome Extension** that [briefly describe what your extension does]. It includes a timer feature that starts when activated, logs session times, and displays a floating session tracker.
