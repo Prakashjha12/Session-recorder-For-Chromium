@@ -5,12 +5,12 @@
   --primary-hover: #3a56d4;
   --danger-color: #ef476f;
   --danger-hover: #d64062;
-  --success-color: #06d6a0;
+  --success-color: #59db66;
   --text-color: #ffffff;
   --text-light: rgba(255, 255, 255, 0.7);
   --bg-color: #f8f9fa;
   --card-bg: rgba(255, 255, 255, 0.15);
-  --border-radius: 20px;
+  --border-radius: 10px;
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   --glass-border: 1px solid rgba(255, 255, 255, 0.18);
@@ -31,7 +31,9 @@ body {
   padding: 12px 12px 50px;
   width: 320px;
   /* height: 440px; */
-  background: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
+  background-color: #0093E9;
+  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+  
   color: var(--text-color);
   line-height: 1.5;
   position: relative;
