@@ -3,7 +3,7 @@ let updateInterval = null;
 let userHidTimer = false; // Flag to track if user manually hid the timer
 
 // Add console logging for debugging
-console.log("Session Timer Extension: Content script loaded");
+// console.log("Session Timer Extension: Content script loaded");
 
 // Create a simpler, more reliable floating timer
 function createSimpleTimer() {
@@ -116,15 +116,15 @@ function hideSimpleTimer() {
 
 // Listen for messages from the background script
 chrome.runtime.onMessage.addListener((message) => {
-  console.log("Session Timer: Received message", message);
+  // console.log("Session Timer: Received message", message);
   
   if (message.action === 'update_timer') {
     if (message.isRunning && message.startTime) {
-      console.log("Timer is running with startTime:", message.startTime);
+      // console.log("Timer is running with startTime:", message.startTime);
       
       // Check if timer was started from standalone window
       if (message.fromStandalone) {
-        console.log("Timer started from standalone window, hiding floating timer");
+        // console.log("Timer started from standalone window, hiding floating timer");
         userHidTimer = true;
         chrome.storage.local.set({ 'timerHidden': true });
       }
@@ -146,7 +146,7 @@ chrome.runtime.onMessage.addListener((message) => {
       }, 1000);
       
     } else {
-      console.log("Timer is stopped");
+      // console.log("Timer is stopped");
       // Hide the timer
       hideSimpleTimer();
       
@@ -169,15 +169,15 @@ chrome.runtime.onMessage.addListener((message) => {
 });
 
 // Check timer status when page loads
-console.log("Checking timer status on page load");
+// console.log("Checking timer status on page load");
 chrome.storage.local.get(['timerRunning', 'startTime', 'timerHidden'], (data) => {
-  console.log("Timer status on page load:", data);
+  // console.log("Timer status on page load:", data);
   
   // Set the user hidden flag based on storage
   userHidTimer = data.timerHidden === true;
   
   if (data.timerRunning && data.startTime) {
-    console.log("Timer is running, creating and showing timer");
+    // console.log("Timer is running, creating and showing timer");
     
     // Create timer but only show if not manually hidden
     const simpleTimer = document.getElementById('simple-session-timer') || createSimpleTimer();
@@ -195,7 +195,7 @@ chrome.storage.local.get(['timerRunning', 'startTime', 'timerHidden'], (data) =>
       updateSimpleTimer(data.startTime);
     }, 1000);
   } else {
-    console.log("Timer is not running");
+    // console.log("Timer is not running");
     hideSimpleTimer();
   }
 });
